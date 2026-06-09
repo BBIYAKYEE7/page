@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 const features = [
@@ -206,12 +207,12 @@ export default function Home() {
               </button>
             ))}
           </nav>
-          <button
-            onClick={() => goTo(3)}
+          <Link
+            href="/mockup"
             className="text-sm font-medium px-4 py-2 rounded-full bg-indigo-600 text-white hover:bg-indigo-700 transition-colors cursor-pointer"
           >
-            무료로 시작하기
-          </button>
+            무료로 확인하기
+          </Link>
         </div>
       </header>
 
@@ -270,12 +271,12 @@ export default function Home() {
               className={`flex flex-col sm:flex-row gap-4 justify-center ${playIntro ? "hero-rise-in" : ""}`}
               style={{ animationDelay: "560ms" }}
             >
-              <button
-                onClick={() => goTo(3)}
+              <Link
+                href="/mockup"
                 className="px-8 py-4 rounded-full bg-indigo-600 text-white font-semibold text-base hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-200 cursor-pointer border-none"
               >
-                지금 무료로 시작하기
-              </button>
+                지금 무료로 확인하기
+              </Link>
               <button
                 onClick={() => goTo(2)}
                 className="px-8 py-4 rounded-full border border-gray-200 text-gray-700 font-semibold text-base hover:bg-gray-50 transition-colors cursor-pointer bg-transparent"
@@ -373,12 +374,12 @@ export default function Home() {
               <p className="text-indigo-100 text-lg mb-8 max-w-md mx-auto">
                 무료 플랜으로 B Essential의 핵심 기능을 경험해보세요. 신용카드 불필요.
               </p>
-              <a
-                href="#"
+              <Link
+                href="/mockup"
                 className="inline-block px-10 py-4 rounded-full bg-white text-indigo-600 font-bold text-base hover:bg-indigo-50 transition-colors shadow-lg"
               >
-                무료로 시작하기
-              </a>
+                무료로 확인하기
+              </Link>
             </div>
           </div>
           <footer className="w-full border-t border-gray-100 py-8 px-6">
