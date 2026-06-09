@@ -50,16 +50,29 @@ const steps = [
 ];
 
 const stats = [
-  { value: "1,200+", label: "창업팀 이용 중" },
-  { value: "98%", label: "사용자 만족도" },
-  { value: "3분", label: "평균 서류 정리 시간" },
+  { target: 1200, suffix: "+", label: "창업팀 이용 중" },
+  { target: 98, suffix: "%", label: "사용자 만족도" },
+  { target: 3, suffix: "분", label: "평균 서류 정리 시간" },
 ];
 
 const SECTION_COUNT = 4;
 const COOLDOWN = 950; // ms
+const INTRO_STORAGE_KEY = "bessential:hero-intro-seen";
+const COUNT_UP_DURATION = 2000;
+const COUNT_UP_DELAY = 120;
+
+const formatStatValue = (value: number, suffix: string) => {
+  return `${Math.floor(value).toLocaleString("en-US")}${suffix}`;
+};
+
+const easeOutQuint = (progress: number) => {
+  return 1 - Math.pow(1 - progress, 5);
+};
 
 export default function Home() {
   const [current, setCurrent] = useState(0);
+  const [playIntro, setPlayIntro] = useState(false);
+  const [countValues, setCountValues] = useState(() => stats.map((s) => s.target));
   const blocking = useRef(false);
   const touchStartY = useRef(0);
 
@@ -69,6 +82,62 @@ export default function Home() {
     blocking.current = true;
     setTimeout(() => { blocking.current = false; }, COOLDOWN);
   }, []);
+
+  useEffect(() => {
+    const frame = window.requestAnimationFrame(() => {
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const hasSeenIntro = window.sessionStorage.getItem(INTRO_STORAGE_KEY) === "true";
+
+      if (reduceMotion || hasSeenIntro) return;
+
+      window.sessionStorage.setItem(INTRO_STORAGE_KEY, "true");
+      setPlayIntro(true);
+    });
+
+    return () => {
+      window.cancelAnimationFrame(frame);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (current !== 0) return;
+
+    let frame = 0;
+    let timeout = 0;
+
+    const resetFrame = window.requestAnimationFrame(() => {
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      if (reduceMotion) return;
+
+      setCountValues(stats.map(() => 0));
+
+      timeout = window.setTimeout(() => {
+        const startedAt = performance.now();
+
+        const tick = (now: number) => {
+          const progress = Math.min((now - startedAt) / COUNT_UP_DURATION, 1);
+          const eased = easeOutQuint(progress);
+
+          setCountValues(stats.map((s) => s.target * eased));
+
+          if (progress < 1) {
+            frame = window.requestAnimationFrame(tick);
+          } else {
+            setCountValues(stats.map((s) => s.target));
+          }
+        };
+
+        frame = window.requestAnimationFrame(tick);
+      }, COUNT_UP_DELAY);
+    });
+
+    return () => {
+      window.cancelAnimationFrame(resetFrame);
+      window.clearTimeout(timeout);
+      window.cancelAnimationFrame(frame);
+    };
+  }, [current]);
 
   useEffect(() => {
     const onWheel = (e: WheelEvent) => {
@@ -172,20 +241,35 @@ export default function Home() {
         <section className="h-screen flex flex-col items-center justify-center px-6 pt-16 text-center relative overflow-hidden">
           <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_80%_60%_at_50%_0%,rgba(99,102,241,0.1),transparent)]" />
           <div className="max-w-3xl mx-auto">
-            <span className="inline-block text-xs font-semibold tracking-widest text-indigo-600 uppercase mb-6 px-3 py-1 bg-indigo-50 rounded-full">
+            <span
+              className={`inline-block text-xs font-semibold tracking-widest text-indigo-600 uppercase mb-6 px-3 py-1 bg-indigo-50 rounded-full ${playIntro ? "hero-rise-in" : ""}`}
+              style={{ animationDelay: "80ms" }}
+            >
               창업 서류 관리 플랫폼
             </span>
             <h1 className="text-5xl sm:text-6xl font-bold leading-tight tracking-tight text-gray-900 mb-6">
-              창업 서류,<br />
-              <span className="bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent">
+              <span className={`inline-block ${playIntro ? "hero-rise-in" : ""}`} style={{ animationDelay: "180ms" }}>
+                창업 서류,
+              </span>
+              <br />
+              <span
+                className={`inline-block bg-gradient-to-r from-indigo-500 via-violet-500 to-purple-500 bg-clip-text text-transparent gradient-flow ${playIntro ? "hero-rise-in" : ""}`}
+                style={{ animationDelay: "300ms" }}
+              >
                 이제 쉽고 빠르게
               </span>
             </h1>
-            <p className="text-lg sm:text-xl text-gray-500 leading-relaxed mb-10 max-w-xl mx-auto">
+            <p
+              className={`text-lg sm:text-xl text-gray-500 leading-relaxed mb-10 max-w-xl mx-auto ${playIntro ? "hero-rise-in" : ""}`}
+              style={{ animationDelay: "440ms" }}
+            >
               사업자등록부터 투자계약서까지, 초기 창업자에게 필요한 모든 서류를 한 곳에서 정리하세요.
               B Essential이 복잡한 서류 준비를 단순하게 만들어드립니다.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div
+              className={`flex flex-col sm:flex-row gap-4 justify-center ${playIntro ? "hero-rise-in" : ""}`}
+              style={{ animationDelay: "560ms" }}
+            >
               <button
                 onClick={() => goTo(3)}
                 className="px-8 py-4 rounded-full bg-indigo-600 text-white font-semibold text-base hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-200 cursor-pointer border-none"
@@ -201,9 +285,15 @@ export default function Home() {
             </div>
           </div>
           <div className="mt-16 max-w-2xl w-full grid grid-cols-3 gap-8">
-            {stats.map((s) => (
-              <div key={s.label} className="text-center">
-                <div className="text-3xl font-bold text-gray-900" style={{ fontFamily: "'Pretendard Variable', Pretendard, sans-serif" }}>{s.value}</div>
+            {stats.map((s, i) => (
+              <div
+                key={s.label}
+                className={`text-center ${playIntro ? "hero-rise-in" : ""}`}
+                style={{ animationDelay: `${680 + i * 90}ms` }}
+              >
+                <div className="text-3xl font-bold text-gray-900 tabular-nums" style={{ fontFamily: "'Pretendard Variable', Pretendard, sans-serif" }}>
+                  {formatStatValue(countValues[i], s.suffix)}
+                </div>
                 <div className="text-sm text-gray-500 mt-1">{s.label}</div>
               </div>
             ))}
