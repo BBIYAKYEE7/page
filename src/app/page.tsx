@@ -943,6 +943,16 @@ export default function Home() {
           .hero-rise-in  { animation: none; opacity: 1; }
           .gradient-flow { animation: none; }
         }
+
+        body { 
+          overflow: hidden; 
+          font-family: 'Pretendard', sans-serif; 
+          overscroll-behavior: none; /* 핵심: 모바일 바운스 차단 */
+          touch-action: pan-y;       /* 핵심: 터치 스크롤 제어 최적화 */
+        }
+        
+        .scrollbar-none::-webkit-scrollbar { display: none; }
+        .scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
       `}</style>
     </div>
   );
