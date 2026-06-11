@@ -333,6 +333,11 @@ export default function Home() {
             className="flex items-center gap-2 cursor-pointer bg-transparent border-none p-0 active:scale-95 transition-transform"
             aria-label="B Essential 공식 홈페이지로 이동"
           >
+          <Link 
+            href="/" 
+            className="flex items-center gap-2 cursor-pointer active:scale-95 transition-transform"
+            aria-label="B Essential 공식 홈페이지로 이동"
+          >
             <Image 
               src="/logo.svg" 
               alt="B Essential" 
@@ -340,11 +345,8 @@ export default function Home() {
               height={20} 
               priority 
               className="sm:w-[130px] sm:h-[22px]"
-              style={{ 
-                filter: current === 9 ? "brightness(0) invert(1)" : "none", 
-                transition: "filter 750ms cubic-bezier(0.16, 1, 0.3, 1)" 
-              }}
             />
+          </Link>
           </button>
           <nav className="hidden md:flex items-center gap-8 text-sm nav-links">
             {[
@@ -767,8 +769,20 @@ export default function Home() {
             <div className="max-w-6xl mx-auto flex flex-col gap-3.5 sm:gap-4 px-2">
               <div className="flex flex-col lg:flex-row justify-between gap-4 foot-disc">
                 <div className="flex items-center gap-2 text-white font-bold foot-brand">
-                  <svg width="18" height="18" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="4"><circle cx="32" cy="33" r="8" fill="#6366F1" /></svg>
-                  <span className="text-sm">B Essential</span>
+          <Link 
+            href="/" 
+            className="flex items-center gap-2 cursor-pointer active:scale-95 transition-transform"
+            aria-label="B Essential 공식 홈페이지로 이동"
+          >
+            <Image 
+              src="/logo.svg" 
+              alt="B Essential" 
+              width={110} 
+              height={20} 
+              priority 
+              className="sm:w-[130px] sm:h-[22px]"
+            />
+          </Link>
                 </div>
                 <p className="max-w-2xl text-left lg:text-right text-[10px] sm:text-[11px] leading-relaxed break-keep">
                   본 서비스는 일반적인 정보와 실행 가이드를 제공하며, 법률·세무·노무 자문이 아닙니다. 법인 설립 절차·비용·세금, 정부지원사업의 요건·금액·일정은 시점에 따라 달라질 수 있어, 진행 전 공식 공고와 전문가(법무사·세무사 등) 확인이 필요합니다.
