@@ -60,6 +60,7 @@ const features = [
     icon: <FileText className="w-5 h-5" />,
     title: "산출물 자동 생성",
     desc: "린 캔버스, 정관 초안, 준비물 체크리스트, IR 한 장까지 — 필요한 서류를 한 곳에서 만들고 관리합니다.",
+    note: undefined,
   },
   {
     icon: <CheckCircle2 className="w-5 h-5" />,
@@ -197,7 +198,7 @@ const examples = [
     summary: [{ k: "한 줄 정의", v: "마감 임박·재고 음식을 정가보다 싸게 묶은 ‘서프라이즈 백’을 가게와 동네 손님이 앱에서 거래하는 양면 마켓플레이스. 가게는 폐기 손실 회수, 손님은 할인, 환경엔 음식물 쓰레기 감소." }, { k: "해결 문제", v: "카페·베이커리·식당이 매일 버리는 마감 재고 손실 / 소비자의 가격 부담 / 음식물 쓰레기의 환경·사회 비용." }, { k: "1차 고객 (공급)", v: "마감 재고가 발생하는 동네 카페·베이커리·식당 점주 — ‘버리면 0원’이라 도입 장벽이 낮음." }, { k: "1차 고객 (수요)", v: "가성비·환경 의식이 있는 인근 거주·직장인." }, { k: "핵심 가치", v: "버리면 0원인 재고를 매출로 바꾸고, 손님은 반값에 사며, 음식물 쓰레기 감축이라는 사회적 명분을 더함." }, { k: "수익 모델", v: "거래 건당 수수료(주력) + 점주 구독·광고 + (확장) 프랜차이즈·기관 제휴." }],
     verdict: "양면시장 특성상 공급(가게)과 수요(손님)를 동시에 확보하는 ‘콜드스타트’가 최대 관문입니다. 한 지역의 밀도를 먼저 채우는 지역 한정 전략과, 음식물 쓰레기 감축이라는 사회적 명분(소셜벤처 트랙)이 이를 푸는 두 레버입니다.",
     axes: [{ label: "문제 정의·수요", score: 78, note: "점주 폐기 손실·소비자 가성비 모두 명확. 해외에서 검증된 모델." }, { label: "솔루션 차별성", score: 60, note: "모델 자체는 국내외 선례 존재. 지역 밀도·픽업 UX·브랜드가 실제 승부처." }, { label: "기술 실현성", score: 80, note: "위치·예약·결제 조합으로 난도 낮음 — 동시에 진입장벽도 낮다는 뜻." }, { label: "규제·인허가", score: 66, note: "통신판매·전자상거래 표시, 식품 표시·위생 책임. 의료보다 가볍지만 식품안전이 핵심." }, { label: "수익모델·단위경제", score: 64, note: "건당 수수료가 작아 거래량·밀도·재구매 없이는 단위경제가 안 나옴." }, { label: "팀·실행력", score: 70, note: "공급·수요를 동시에 모으는 지역 영업력이 관건." }],
-    strengths: [{ t: "버려지던 가치의 전환", d: "폐기 시 0원인 재고를 매출로 바꿔주므로 점주에게 ‘손해 볼 것 없는’ 제안이 됩니다. 공급 측 도입 장벽이 낮아 초기 가게 확보가 상대적으로 쉽습니다." }, { t: "강한 사회적 명분", d: "음식물 쓰레기·탄소 감축은 ESG·지자체·소셜벤처 트랙과 직접 연결되는 스토리이자 지원 자산입니다. 단순 커머스보다 우호적 채널이 많습니다." }, { t: "양면 네트워크 효과", d: "한 지역에서 공급·수요 밀도가 임계점을 넘으면 후발주자가 따라오기 어려운 해자가 형성됩니다." }],
+    strengths: [{ t: "버려지던 가치의 전환", d: "폐기 시 0원인 재고를 매출로 바꿔주므로 점주에게 ‘손해 볼 것 없는’ 제안이 됩니다. 공급 측 도입 장벽이 낮아 초기 가게 확보가 상대적으로 쉽습니다." }, { t: "강한 사회적 명분", d: "음식물 쓰레기·탄소 감축은 ESG·지자체·소셜벤처 트랙과 직접 연결되는 스토리이자 지원 자산입니다. 단순 커머스보다 우호적 채널이 많습니다." }, { t: "낮은 기술 난도·빠른 MVP", d: "위치·예약·결제 조합이라 빠르게 만들고 검증할 수 있고, 초기 자금이 적게 든다는 강점이 있습니다. 가설 검증 속도가 빠릅니다." }, { t: "양면 네트워크 효과", d: "한 지역에서 공급·수요 밀도가 임계점을 넘으면 후발주자가 따라오기 어려운 해자가 형성됩니다." }],
     risks: [{ t: "양면 콜드스타트", sev: "高", d: "가게도 손님도 ‘상대가 없으면’ 안 들어옴. → 한 동네에 밀도 집중, 공급(가게)을 먼저 수기로 확보한 뒤 수요를 모객하는 순서 설계." }, { t: "식품 안전·표시 책임", sev: "중~高", d: "마감 식품의 소비기한·알레르기·위생 분쟁 시 플랫폼 책임론. → 소비기한·보관·알레르기 표시 의무화, 점주 약관·면책 조항 정비." }],
     assumptions: [{ a: "점주가 마감 재고를 앱에 올릴 의향이 있다", how: "동네 가게 10~15곳 인터뷰 + 시범 등록", pass: "5곳 이상 실제 등록·반복 등록 의향" }, { a: "손님이 ‘서프라이즈 백’을 반복 구매한다", how: "한 동네 2주 파일럿, 픽업 완료율·재구매율 측정", pass: "픽업 완료 80%+ / 2주 지속률 50%+" }],
     roadmap: [{ code: "P0", title: "아이디어 검증", dur: "2~4주", goal: "양면 수요가 실재하는지 확인", milestone: "가게 10곳+ · 손님 의향 파악 완료", todos: ["점주 10~15곳 인터뷰 + 시범 등록", "손님 가성비·환경 동기 인터뷰", "1개 동네 파일럿 가게 섭외"] }, { code: "P1", title: "사업형태·행정 셋업", dur: "2~4주", goal: "통신판매·표시·결제 정비", milestone: "사업 형태 결정 · 통신판매업 신고", todos: ["개인 vs 법인 결정", "통신판매업 신고 진행", "소비기한·알레르기 표시 시스템 설계"] }],
@@ -325,7 +326,7 @@ export default function Home() {
       {/* ── 헤더 ── */}
       <header 
         className={`fixed top-0 left-0 right-0 z-50 border-b nav transition-all duration-[750ms] cubic-bezier(0.16, 1, 0.3, 1) ${current === 9 ? "bg-black/20 border-white/10 text-white" : "bg-white/85 border-gray-100"}`}
-        style={{ backdropFilter: "blur(12px)" }}
+        style={{ backdropFilter: "blur(12px)", backgroundColor: current === 9 ? "rgba(14, 15, 19, 0.85)" : "rgba(255, 255, 255, 0.85)", borderColor: current === 9 ? "rgba(255, 255, 255, 0.1)" : "rgba(243, 244, 246, 1)", color: current === 9 ? "#ffffff" : "#111827" }}
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between nav-in">
           <button 
@@ -333,20 +334,18 @@ export default function Home() {
             className="flex items-center gap-2 cursor-pointer bg-transparent border-none p-0 active:scale-95 transition-transform"
             aria-label="B Essential 공식 홈페이지로 이동"
           >
-          <Link 
-            href="/" 
-            className="flex items-center gap-2 cursor-pointer active:scale-95 transition-transform"
-            aria-label="B Essential 공식 홈페이지로 이동"
-          >
+          <div className="flex items-center gap-2 cursor-pointer active:scale-95 transition-transform">
+            {/* current === 9 (마지막 섹션)일 때 로고 이미지가 logo(w).svg로 750ms 동기화 전환되도록 스위칭 */}
             <Image 
-              src="/logo.svg" 
+              src={current === 9 ? "/logo(w).svg" : "/logo.svg"} 
               alt="B Essential" 
               width={110} 
               height={20} 
               priority 
               className="sm:w-[130px] sm:h-[22px]"
+              style={{ transition: "all 750ms cubic-bezier(0.16, 1, 0.3, 1)" }}
             />
-          </Link>
+          </div>
           </button>
           <nav className="hidden md:flex items-center gap-8 text-sm nav-links">
             {[
@@ -449,7 +448,7 @@ export default function Home() {
 
         {/* ── 섹션 1 · Why B Essential ── */}
         <section className="h-screen flex items-center px-4 sm:px-6 bes-section">
-          <div className="max-w-5xl mx-auto w-full grid md:grid-cols-2 gap-8 sm:grid-cols-1 md:gap-16 items-center value-grid">
+          <div className="max-w-5xl w-full mx-auto grid md:grid-cols-2 gap-8 sm:grid-cols-1 md:gap-16 items-center value-grid">
             <div>
               <span className="text-xs font-semibold tracking-widest text-indigo-600 uppercase eyebrow">WHY B ESSENTIAL</span>
               <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold leading-tight tracking-tight text-gray-900 mt-3 sm:mt-5 h2 break-keep">
@@ -680,7 +679,7 @@ export default function Home() {
                   {p.tag && <span className="absolute -top-3 left-5 bg-gradient-to-r from-indigo-500 to-violet-500 text-white text-[10px] font-semibold px-2.5 py-0.5 rounded-full price-tag">{p.tag}</span>}
                   <div className="font-bold text-gray-900 text-sm sm:text-base price-name">{p.name}</div>
                   <div className="text-2xl sm:text-3xl font-extrabold tracking-tight text-gray-900 mt-1 sm:mt-2 price-amt">
-                    {p.was && <span className="text-sm text-gray-400 line-through mr-2 font-normal price-was">{p.was}</span>}
+                    {p.was && <span className="text-xs sm:text-sm text-gray-400 line-through mr-2 font-normal price-was">{p.was}</span>}
                     {p.price}
                   </div>
                   <div className="text-[11px] sm:text-xs text-gray-500 mt-1 mb-3.5 price-note leading-tight">{p.note}</div>
@@ -769,20 +768,22 @@ export default function Home() {
             <div className="max-w-6xl mx-auto flex flex-col gap-3.5 sm:gap-4 px-2">
               <div className="flex flex-col lg:flex-row justify-between gap-4 foot-disc">
                 <div className="flex items-center gap-2 text-white font-bold foot-brand">
-          <Link 
-            href="/" 
-            className="flex items-center gap-2 cursor-pointer active:scale-95 transition-transform"
-            aria-label="B Essential 공식 홈페이지로 이동"
-          >
-            <Image 
-              src="/logo.svg" 
-              alt="B Essential" 
-              width={110} 
-              height={20} 
-              priority 
-              className="sm:w-[130px] sm:h-[22px]"
-            />
-          </Link>
+                  <Link 
+                    href="/" 
+                    className="flex items-center gap-2 cursor-pointer active:scale-95 transition-transform"
+                    aria-label="B Essential 공식 홈페이지로 이동"
+                  >
+                    {/* 푸터 영역의 로고도 마지막 9번 섹션 진입 시 logo(w).svg로 연동 교체 수립 */}
+                    <Image 
+                      src="/logo(w).svg" 
+                      alt="B Essential" 
+                      width={110} 
+                      height={20} 
+                      priority 
+                      className="sm:w-[130px] sm:h-[22px]"
+                      style={{ transition: "all 750ms cubic-bezier(0.16, 1, 0.3, 1)" }}
+                    />
+                  </Link>
                 </div>
                 <p className="max-w-2xl text-left lg:text-right text-[10px] sm:text-[11px] leading-relaxed break-keep">
                   본 서비스는 일반적인 정보와 실행 가이드를 제공하며, 법률·세무·노무 자문이 아닙니다. 법인 설립 절차·비용·세금, 정부지원사업의 요건·금액·일정은 시점에 따라 달라질 수 있어, 진행 전 공식 공고와 전문가(법무사·세무사 등) 확인이 필요합니다.
