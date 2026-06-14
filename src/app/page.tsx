@@ -494,7 +494,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── 섹션 3 · 이용 방법 ── */}
+        {/* ── 섹션 3 · 이용 방법 (요청하신 보라색 숫자 부분 JetBrains Mono 적용) ── */}
         <section className="h-screen flex flex-col items-center justify-center px-4 sm:px-6 bes-section">
           <div className="max-w-5xl w-full mx-auto">
             <div className="text-center mb-8 sm:mb-12 sec-head">
@@ -506,7 +506,8 @@ export default function Home() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-10 steps">
               {steps.map((s, i) => (
                 <div key={i} className="relative step flex sm:block items-start gap-4">
-                  <span className="text-3xl sm:text-4xl font-black text-indigo-500 font-sans step-n leading-none shrink-0">{s.num}</span>
+                  {/* 요청사항에 맞춰 큰 보라색 숫자 부분만 font-mono 명시 */}
+                  <span className="text-3xl sm:text-4xl font-black text-indigo-500 font-mono step-n leading-none shrink-0">{s.num}</span>
                   <div className="relative z-10">
                     <h3 className="font-semibold text-neutral-900 text-sm sm:text-lg sm:mt-1 mb-1 sm:mb-2 step-title">{s.title}</h3>
                     <p className="text-xs sm:text-sm text-gray-500 leading-relaxed step-desc">{s.desc}</p>
@@ -617,7 +618,7 @@ export default function Home() {
                 <div>
                   <div className="border border-gray-100 rounded-xl overflow-hidden cmp divide-y divide-gray-100">
                     {E.compare.map((c, i) => (
-                      <div key={i} className="grid grid-cols-3 p-3 text-[11px] sm:text-xs cmp-row"><span className="font-bold text-gray-700 cmp-k truncate font-sans">{c.k}</span><span className="text-gray-500 truncate">개인: {c.a}</span><span className="text-indigo-600 font-semibold cmp-b truncate">법인: {c.b}</span></div>
+                      <div key={i} className="grid grid-cols-3 p-3 text-[11px] sm:text-xs cmp-row"><span className="font-bold text-gray-700 cmp-k truncate font-sans">{c.k}</span><span className="text-gray-500 truncate">개인: {c.a}</span><span className="text-indigo-600 font-semibold cmp-b truncate font-sans">{c.b}</span></div>
                     ))}
                   </div>
                 </div>
