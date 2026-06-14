@@ -162,7 +162,7 @@ const examples = [
       { t: "의료기기·의료행위 경계", sev: "高", d: "‘확인·알림’이 의료 모니터링으로 해석될 위험. → 비의료 건강관리로 포지셔닝하고 기능·카피를 ‘확인·기록·전달’로 한정, 식약처 분류 확인 + 법무 검토." },
       { t: "건강 민감정보 처리", sev: "高", d: "건강정보는 민감정보이고 당사자(MCI)의 동의능력 이슈가 있음. → 보호자·대리 동의 구조 명시, 최소수집·암호화·보관기간·파기 정책 문서화." },
       { t: "음성 합성 윤리·악용", sev: "중~High", d: "음성권·딥보이스 보이스피싱 악용·당사자 인지 윤리. → 본인 인증 기반 등록·합성 동의, AI 안내 고지, 무단합성 방지·로깅." },
-      { t: "AI 환각·오탐/미탐", sev: "高", d: "모호한 발화를 잘못 해석해 이상을 놓치거나 거짓 경보 → 돌봄 사고 위험. → 응급 자동판단 배제, 사람(보호자) 확인 루프 강제, 119/보호자 연계." }
+      { t: "AI 환각·오탐/미탐", sev: "High", d: "모호한 발화를 잘못 해석해 이상을 놓치거나 거짓 경보 → 돌봄 사고 위험. → 응급 자동판단 배제, 사람(보호자) 확인 루프 강제, 119/보호자 연계." }
     ],
     assumptions: [
       { a: "보호자가 월 구독료를 낼 만큼 통증이 크다", how: "보호자 10~15명 문제 인터뷰 + 가격 민감도 + 현재 대체 지출 확인", pass: "5명 이상 ‘유료라도 쓰겠다’ + 대체 지출(요양·돌봄·통신) 존재" },
@@ -227,7 +227,7 @@ const sectionBg = [
   "#f6f7fb", // 3. 이용방법
   "#ffffff", // 4. 챗봇 비교
   "#ffffff", // 5. 예시 리포트
-  "#f6f7fb", // 6. 왜 신뢰할 수 있나
+  "#f6f7fb", // 6. 왜 믿을 수 있나
   "#ffffff", // 7. 가격 안내
   "#f6f7fb", // 8. FAQ
   "#0e0f13", // 9. 최종 빌드 및 푸터
@@ -315,7 +315,7 @@ export default function Home() {
 
   return (
     <div
-      className="h-screen overflow-hidden text-gray-900 bes"
+      className="h-screen overflow-hidden text-gray-900 bes animate-sans"
       style={{ 
         backgroundColor: sectionBg[current],
         transition: "background-color 750ms cubic-bezier(0.16, 1, 0.3, 1)"
@@ -517,7 +517,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── 섹션 4 · 범용 챗봇 비교 ── */}
+        {/* ── 섹션 4 · 범용 챗봇 비교 (표 내부 폰트 Pretendard 변경) ── */}
         <section className="h-screen flex flex-col items-center justify-center px-4 sm:px-6 bes-section tint">
           <div className="max-w-4xl w-full mx-auto overflow-y-auto max-h-[85vh] sm:overflow-visible pr-1">
             <div className="text-center mb-6 sm:mb-10 sec-head">
@@ -529,13 +529,13 @@ export default function Home() {
             </div>
             <div className="border border-gray-100 rounded-2xl sm:rounded-3xl overflow-hidden bg-white shadow-sm vs">
               <div className="grid grid-cols-3 bg-gray-50 border-b border-gray-100 font-semibold text-xs sm:text-sm text-gray-700 vs-head">
-                <div className="p-3 sm:p-4 pl-4 sm:pl-6 text-gray-400 font-mono text-[10px] sm:text-xs tracking-wider vs-axis">기준</div>
+                <div className="p-3 sm:p-4 pl-4 sm:pl-6 text-gray-400 font-sans text-[10px] sm:text-xs tracking-wider vs-axis">기준</div>
                 <div className="p-3 sm:p-4 text-gray-500 vs-col vs-gpt">범용 챗봇</div>
                 <div className="p-3 sm:p-4 text-indigo-600 font-bold vs-col vs-be">B Essential</div>
               </div>
               {chatbotComparison.map((v, i) => (
                 <div key={i} className="grid grid-cols-3 border-b border-gray-50 last:border-none text-xs sm:text-sm items-center vs-row">
-                  <div className="p-3 sm:p-4 pl-4 sm:pl-6 font-mono text-[10px] sm:text-xs text-gray-400 font-semibold vs-axis">{v.axis}</div>
+                  <div className="p-3 sm:p-4 pl-4 sm:pl-6 font-sans text-[10px] sm:text-xs text-gray-400 font-semibold vs-axis">{v.axis}</div>
                   <div className="p-3 sm:p-4 text-gray-500 flex gap-1 sm:gap-2 items-start vs-cell vs-gpt break-all">
                     <X size={13} className="mt-0.5 text-gray-300 shrink-0" /> <span className="text-[11px] sm:text-sm">{v.gpt}</span>
                   </div>
@@ -806,7 +806,7 @@ export default function Home() {
 
       </div>
 
-      {/* ── 오버레이 상세 리포트 팝업 모달 ── */}
+      {/* ── 오버레이 상세 리포트 팝업 모달 (모달 내부 폰트 Pretendard 변경) ── */}
       <div 
         className={`fixed inset-0 z-[100] flex items-center justify-center p-0 sm:p-4 bg-neutral-950/60 backdrop-blur-md transition-all duration-300 ${showModal ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
         onClick={() => setShowModal(false)}
@@ -817,7 +817,7 @@ export default function Home() {
         >
           <div className="px-5 py-4 border-b border-neutral-100 flex items-center justify-between bg-neutral-50/50 shrink-0">
             <div>
-              <div className="text-[9px] sm:text-[10px] font-mono font-bold text-indigo-600 uppercase tracking-widest mb-0.5">B Essential Analytics</div>
+              <div className="text-[9px] sm:text-[10px] font-sans font-bold text-indigo-600 uppercase tracking-widest mb-0.5">B Essential Analytics</div>
               <h3 className="text-sm sm:text-base font-bold text-neutral-900 truncate max-w-[200px] sm:max-w-none">{E.label} 상세 리포트</h3>
             </div>
             <button 
@@ -841,7 +841,7 @@ export default function Home() {
                       <div key={i} className="border-b border-neutral-50 pb-3 last:border-none last:pb-0 text-xs">
                         <div className="flex items-center gap-2 font-bold text-neutral-900 mb-1">
                           <span className="break-all">{r.t}</span>
-                          <span className="bg-red-50 text-red-600 border border-red-100 px-1.5 py-0.2 rounded text-[9px] font-mono shrink-0">{r.sev}</span>
+                          <span className="bg-red-50 text-red-600 border border-red-100 px-1.5 py-0.2 rounded text-[9px] font-sans font-semibold shrink-0">{r.sev}</span>
                         </div>
                         <p className="text-neutral-500 leading-relaxed text-[11px] sm:text-xs break-keep">{r.d}</p>
                       </div>
@@ -876,8 +876,8 @@ export default function Home() {
                     {E.roadmap.map((r, i) => (
                       <div key={i} className="p-3 border border-neutral-100 bg-neutral-50/50 rounded-xl text-xs">
                         <div className="flex items-center justify-between mb-1">
-                          <span className="font-mono font-bold text-[9px] bg-indigo-50 text-indigo-600 px-1.5 py-0.2 rounded">{r.code}</span>
-                          <span className="text-[9px] text-neutral-400 font-mono">{r.dur}</span>
+                          <span className="font-sans font-bold text-[9px] bg-indigo-50 text-indigo-600 px-1.5 py-0.2 rounded">{r.code}</span>
+                          <span className="text-[9px] text-neutral-400 font-sans">{r.dur}</span>
                         </div>
                         <div className="font-semibold text-xs text-neutral-900 mb-1.5">{r.title}</div>
                         <ul className="space-y-1 pl-3.5 list-disc text-neutral-500 text-[11px] sm:text-xs leading-normal break-keep">
