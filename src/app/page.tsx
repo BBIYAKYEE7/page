@@ -401,7 +401,7 @@ export default function Home() {
           <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_80%_60%_at_50%_0%,rgba(99,102,241,0.08),transparent)]" />
           <div className="max-w-3xl mx-auto hero-in">
             <span className="hero-badge mb-3 text-[10px] sm:text-xs">비공개 베타 · 얼리 액세스 모집</span>
-            <span className="block text-[10px] sm:text-xs font-semibold tracking-widest text-indigo-600 uppercase mb-3 sm:mb-4 eyebrow font-mono">
+            <span className="block text-[10px] sm:text-xs font-semibold tracking-widest text-indigo-600 uppercase mb-3 sm:mb-4 eyebrow font-sans">
               IDEA → COMPANY · 사업화 OS
             </span>
             <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold leading-tight tracking-tight text-gray-900 mb-4 sm:mb-6 h1 hero-h1">
@@ -447,7 +447,7 @@ export default function Home() {
         <section className="h-screen flex items-center px-4 sm:px-6 bes-section">
           <div className="max-w-5xl w-full mx-auto grid md:grid-cols-2 gap-8 sm:grid-cols-1 md:gap-16 items-center value-grid">
             <div>
-              <span className="text-xs font-semibold tracking-widest text-indigo-600 uppercase eyebrow font-mono">WHY B ESSENTIAL</span>
+              <span className="text-xs font-semibold tracking-widest text-indigo-600 uppercase eyebrow font-sans">WHY B ESSENTIAL</span>
               <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold leading-tight tracking-tight text-gray-900 mt-3 sm:mt-5 h2 break-keep">
                 '그래서 뭐부터 하지?'에서<br className="hidden sm:inline" /> 멈추지 않도록.
               </h2>
@@ -470,7 +470,7 @@ export default function Home() {
         <section className="h-screen flex flex-col items-center justify-center px-4 sm:px-6 bes-section tint">
           <div className="max-w-6xl w-full mx-auto overflow-y-auto max-h-[85vh] sm:overflow-visible pr-1">
             <div className="text-center mb-6 sm:mb-10 sec-head">
-              <span className="text-xs font-semibold tracking-widest text-indigo-600 uppercase eyebrow font-mono">WHAT YOU GET</span>
+              <span className="text-xs font-semibold tracking-widest text-indigo-600 uppercase eyebrow font-sans">WHAT YOU GET</span>
               <h2 className="text-2xl sm:text-4xl font-bold text-gray-900 mt-2 sm:mt-3 h2">
                 아이디어를 '실행 가능한 계획'으로
               </h2>
@@ -484,7 +484,7 @@ export default function Home() {
                   <h3 className="font-semibold text-sm sm:text-base text-gray-900 mb-1.5 sm:mb-2 card-title">{f.title}</h3>
                   <p className="text-xs sm:text-sm text-gray-500 leading-relaxed card-desc">{f.desc}</p>
                   {f.note && (
-                    <span className="inline-block mt-2.5 text-[10px] font-mono text-amber-700 bg-amber-50 border border-amber-200 rounded px-2 py-0.5 card-note">
+                    <span className="inline-block mt-2.5 text-[10px] text-amber-700 bg-amber-50 border border-amber-200 rounded px-2 py-0.5 card-note">
                       {f.note}
                     </span>
                   )}
@@ -498,7 +498,7 @@ export default function Home() {
         <section className="h-screen flex flex-col items-center justify-center px-4 sm:px-6 bes-section">
           <div className="max-w-5xl w-full mx-auto">
             <div className="text-center mb-8 sm:mb-12 sec-head">
-              <span className="text-xs font-semibold tracking-widest text-indigo-600 uppercase eyebrow font-mono">HOW IT WORKS</span>
+              <span className="text-xs font-semibold tracking-widest text-indigo-600 uppercase eyebrow font-sans">HOW IT WORKS</span>
               <h2 className="text-2xl sm:text-4xl font-bold text-gray-900 mt-2 sm:mt-3 mb-2 h2">
                 입력에서 실행까지, 네 단계
               </h2>
@@ -506,7 +506,7 @@ export default function Home() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-10 steps">
               {steps.map((s, i) => (
                 <div key={i} className="relative step flex sm:block items-start gap-4">
-                  <span className="text-3xl sm:text-4xl font-black text-indigo-500 font-mono step-n leading-none shrink-0">{s.num}</span>
+                  <span className="text-3xl sm:text-4xl font-black text-indigo-500 font-sans step-n leading-none shrink-0">{s.num}</span>
                   <div className="relative z-10">
                     <h3 className="font-semibold text-neutral-900 text-sm sm:text-lg sm:mt-1 mb-1 sm:mb-2 step-title">{s.title}</h3>
                     <p className="text-xs sm:text-sm text-gray-500 leading-relaxed step-desc">{s.desc}</p>
@@ -517,11 +517,11 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── 섹션 4 · 범용 챗봇 비교 (표 내부 폰트 Pretendard 변경) ── */}
+        {/* ── 섹션 4 · 범용 챗봇 비교 ── */}
         <section className="h-screen flex flex-col items-center justify-center px-4 sm:px-6 bes-section tint">
           <div className="max-w-4xl w-full mx-auto overflow-y-auto max-h-[85vh] sm:overflow-visible pr-1">
             <div className="text-center mb-6 sm:mb-10 sec-head">
-              <span className="text-xs font-semibold tracking-widest text-indigo-600 uppercase eyebrow font-mono">WHY NOT JUST A CHATBOT</span>
+              <span className="text-xs font-semibold tracking-widest text-indigo-600 uppercase eyebrow font-sans">WHY NOT JUST A CHATBOT</span>
               <h2 className="text-2xl sm:text-4xl font-bold text-gray-900 mt-2 sm:mt-3 h2">범용 챗봇으로는 안 됩니다</h2>
               <p className="text-gray-500 text-xs sm:text-base mt-2 lead px-2">
                 내 아이디어에 맞춘 전용 순서·근거·행정 셋업 매핑 뼈대를 구성합니다.
@@ -552,26 +552,26 @@ export default function Home() {
         <section className="h-screen flex flex-col items-center justify-center px-4 sm:px-6 bes-section">
           <div className="max-w-5xl w-full mx-auto overflow-y-auto max-h-[85vh] pr-1">
             <div className="text-center mb-4 sm:mb-6 sec-head">
-              <span className="text-xs font-semibold tracking-widest text-indigo-600 uppercase eyebrow font-mono">SAMPLE OUTPUT</span>
+              <span className="text-xs font-semibold tracking-widest text-indigo-600 uppercase eyebrow font-sans">SAMPLE OUTPUT</span>
               <h2 className="text-2xl sm:text-4xl font-bold text-gray-900 mt-1 sm:mt-3 h2">결제하면, 이만큼 나옵니다</h2>
             </div>
             
             <div className="flex gap-2 items-center mb-3 overflow-x-auto pb-1 whitespace-nowrap scrollbar-hide ex-chips">
-              <span className="text-[11px] text-gray-400 ex-chips-lab sticky left-0 bg-white pr-2 shrink-0 font-mono">예시</span>
+              <span className="text-[11px] text-gray-400 ex-chips-lab sticky left-0 bg-white pr-2 shrink-0 font-sans">예시</span>
               {examples.map((x, i) => (
                 <button key={x.id} onClick={() => setExIdx(i)} className={`ex-chip px-3 py-1 text-xs rounded-full border ${exIdx === i ? "on bg-indigo-50 text-indigo-600 border-indigo-200 font-semibold" : "border-gray-200 text-gray-500 bg-white"}`}>{x.label}</button>
               ))}
             </div>
 
             <div className="sample-input mb-3 p-3 bg-white border border-gray-100 rounded-xl flex gap-2 text-xs sm:text-sm">
-              <span className="sample-input-lab shrink-0 bg-indigo-50 text-indigo-600 px-1.5 py-0.5 text-[10px] font-mono rounded h-fit">입력</span>
+              <span className="sample-input-lab shrink-0 bg-indigo-50 text-indigo-600 px-1.5 py-0.5 text-[10px] font-sans rounded h-fit">입력</span>
               <p className="text-gray-700 leading-normal">{E.input}</p>
             </div>
 
             <div className="flex gap-1 mb-3 overflow-x-auto pb-1 whitespace-nowrap scrollbar-hide sample-tabs border-b border-gray-100">
               {sampleTabs.map((t) => (
                 <button key={t.id} onClick={() => setTabId(t.id)} className={`sample-tab px-4 py-2 text-xs font-medium border-b-2 transition-all ${tabId === t.id ? "on border-indigo-600 text-indigo-600 font-bold" : "border-transparent text-gray-400"}`}>
-                  <span className="sample-tab-code mr-1 font-mono text-[10px] opacity-60">{t.code}</span>{t.label}
+                  <span className="sample-tab-code mr-1 font-sans text-[10px] opacity-60">{t.code}</span>{t.label}
                 </button>
               ))}
             </div>
@@ -582,20 +582,20 @@ export default function Home() {
                   <div className="font-bold mb-2.5 blk-h flex items-center gap-1.5">종합 매핑 요약 <span className="free-badge text-green-600 bg-green-50 px-1.5 py-0.2 rounded text-[10px]">무료 공개</span></div>
                   <div className="border border-gray-100 rounded-xl overflow-hidden sum-card divide-y divide-gray-50">
                     {E.summary.map((s, i) => (
-                      <div key={i} className="grid grid-cols-1 sm:grid-cols-4 p-3 gap-1 sm:gap-3 sum-row"><span className="font-semibold text-indigo-600 sum-k text-xs font-mono">{s.k}</span><span className="sm:col-span-3 text-gray-600 text-xs break-all">{s.v}</span></div>
+                      <div key={i} className="grid grid-cols-1 sm:grid-cols-4 p-3 gap-1 sm:gap-3 sum-row"><span className="font-semibold text-indigo-600 sum-k text-xs font-sans">{s.k}</span><span className="sm:col-span-3 text-gray-600 text-xs break-all">{s.v}</span></div>
                     ))}
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mt-5 items-center sp-diag-top">
                     <div className="text-center bg-gray-50/60 rounded-xl p-3 score-box">
-                      <div className="text-3xl sm:text-4xl font-extrabold text-indigo-600 score-big font-mono">{E.score}<span className="text-xs text-gray-400 score-out">/100</span></div>
+                      <div className="text-3xl sm:text-4xl font-extrabold text-indigo-600 score-big font-sans">{E.score}<span className="text-xs text-gray-400 score-out">/100</span></div>
                       <div className="text-[10px] text-gray-400 mt-1 score-sub">비즈니스 진단 지수</div>
                     </div>
                     <div className="sm:col-span-2 space-y-1.5 axis">
                       {E.axes.map((a, i) => (
                         <div key={i} className="grid grid-cols-4 items-center gap-1 text-[11px] sm:text-xs axis-item">
-                          <span className="text-gray-600 axis-label truncate col-span-1 font-mono">{a.label}</span>
+                          <span className="text-gray-600 axis-label truncate col-span-1 font-sans">{a.label}</span>
                           <div className="col-span-2 h-2 bg-gray-100 rounded-full overflow-hidden axis-bar"><div className="h-full bg-indigo-500 axis-fill" style={{ width: `${a.score}%` }} /></div>
-                          <span className="text-right font-mono text-gray-900 axis-num col-span-1">{a.score}</span>
+                          <span className="text-right font-sans text-gray-900 axis-num col-span-1">{a.score}</span>
                         </div>
                       ))}
                     </div>
@@ -606,7 +606,7 @@ export default function Home() {
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 rm-rail">
                   {E.roadmap.map((r, i) => (
                     <div key={i} className="border border-gray-100 p-4 rounded-xl bg-gray-50/50 rm-step">
-                      <div className="flex justify-between items-center mb-1.5 rm-head"><span className="bg-indigo-50 text-indigo-600 text-[10px] font-mono px-1.5 py-0.2 rounded rm-code">{r.code}</span><span className="text-[10px] text-gray-400 rm-dur font-mono">{r.dur}</span></div>
+                      <div className="flex justify-between items-center mb-1.5 rm-head"><span className="bg-indigo-50 text-indigo-600 text-[10px] font-sans px-1.5 py-0.2 rounded rm-code">{r.code}</span><span className="text-[10px] text-gray-400 rm-dur font-sans">{r.dur}</span></div>
                       <div className="font-bold text-gray-900 text-xs sm:text-sm rm-title">{r.title}</div>
                       <p className="text-[11px] text-gray-500 mt-1 rm-goal break-keep">{r.goal}</p>
                     </div>
@@ -617,7 +617,7 @@ export default function Home() {
                 <div>
                   <div className="border border-gray-100 rounded-xl overflow-hidden cmp divide-y divide-gray-100">
                     {E.compare.map((c, i) => (
-                      <div key={i} className="grid grid-cols-3 p-3 text-[11px] sm:text-xs cmp-row"><span className="font-bold text-gray-700 cmp-k truncate font-mono">{c.k}</span><span className="text-gray-500 truncate">개인: {c.a}</span><span className="text-indigo-600 font-semibold cmp-b truncate">법인: {c.b}</span></div>
+                      <div key={i} className="grid grid-cols-3 p-3 text-[11px] sm:text-xs cmp-row"><span className="font-bold text-gray-700 cmp-k truncate font-sans">{c.k}</span><span className="text-gray-500 truncate">개인: {c.a}</span><span className="text-indigo-600 font-semibold cmp-b truncate">법인: {c.b}</span></div>
                     ))}
                   </div>
                 </div>
@@ -646,7 +646,7 @@ export default function Home() {
         <section className="h-screen flex flex-col items-center justify-center px-4 sm:px-6 bes-section tint">
           <div className="max-w-5xl w-full mx-auto overflow-y-auto max-h-[85vh] sm:overflow-visible pr-1">
             <div className="text-center mb-6 sm:mb-12 sec-head">
-              <span className="text-xs font-semibold tracking-widest text-indigo-600 uppercase eyebrow font-mono">WHY YOU CAN TRUST IT</span>
+              <span className="text-xs font-semibold tracking-widest text-indigo-600 uppercase eyebrow font-sans">WHY YOU CAN TRUST IT</span>
               <h2 className="text-2xl sm:text-4xl font-bold text-gray-900 mt-2 sm:mt-3 h2">왜 믿을 수 있나</h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 trust-grid">
@@ -667,7 +667,7 @@ export default function Home() {
         <section className="h-screen flex flex-col items-center justify-center px-4 sm:px-6 bes-section">
           <div className="max-w-5xl w-full mx-auto overflow-y-auto max-h-[85vh] sm:overflow-visible pr-1">
             <div className="text-center mb-6 sm:mb-8 sec-head">
-              <span className="text-xs font-semibold tracking-widest text-indigo-600 uppercase eyebrow font-mono">PRICING</span>
+              <span className="text-xs font-semibold tracking-widest text-indigo-600 uppercase eyebrow font-sans">PRICING</span>
               <h2 className="text-2xl sm:text-4xl font-bold text-gray-900 mt-2 sm:mt-3 h2">구독이 아니라, 아이디어별 결제</h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 price-grid">
@@ -675,7 +675,7 @@ export default function Home() {
                 <div key={i} className={`relative flex flex-col rounded-2xl p-5 sm:p-6 bg-white border transition-all duration-200 price ${p.highlight ? "border-indigo-500 shadow-lg shadow-indigo-100 price-hi" : "border-gray-100"}`}>
                   {p.tag && <span className="absolute -top-3 left-5 bg-gradient-to-r from-indigo-500 to-violet-500 text-white text-[10px] font-semibold px-2.5 py-0.5 rounded-full price-tag">{p.tag}</span>}
                   <div className="font-bold text-gray-900 text-sm sm:text-base price-name">{p.name}</div>
-                  <div className="text-2xl sm:text-3xl font-extrabold tracking-tight text-gray-900 mt-1 sm:mt-2 price-amt font-mono">
+                  <div className="text-2xl sm:text-3xl font-extrabold tracking-tight text-gray-900 mt-1 sm:mt-2 price-amt font-sans">
                     {p.was && <span className="text-xs sm:text-sm text-gray-400 line-through mr-2 font-normal price-was">{p.was}</span>}
                     {p.price}
                   </div>
@@ -710,7 +710,7 @@ export default function Home() {
         <section className="h-screen flex flex-col items-center justify-center px-4 sm:px-6 bes-section tint">
           <div className="max-w-3xl w-full mx-auto overflow-y-auto max-h-[80vh] pr-1">
             <div className="text-center mb-6 sm:mb-8 sec-head">
-              <span className="text-xs font-semibold tracking-widest text-indigo-600 uppercase eyebrow font-mono">FAQ</span>
+              <span className="text-xs font-semibold tracking-widest text-indigo-600 uppercase eyebrow font-sans">FAQ</span>
               <h2 className="text-2xl sm:text-4xl font-bold text-gray-900 mt-2 sm:mt-3 h2">결제 전에, 궁금한 것들</h2>
             </div>
             <div className="space-y-2.5 faq-list">
@@ -749,7 +749,7 @@ export default function Home() {
         >
           <div className="flex-1 flex items-center justify-center w-full">
             <div className="max-w-2xl text-center px-2">
-              <span className="text-xs font-semibold tracking-widest text-indigo-300 uppercase eyebrow font-mono">START NOW</span>
+              <span className="text-xs font-semibold tracking-widest text-indigo-300 uppercase eyebrow font-sans">START NOW</span>
               <h2 className="text-2xl sm:text-4xl font-bold text-white mt-2 sm:mt-3 mb-3 sm:mb-4 h2 cta-h2">막막함은 여기서 끝내세요.</h2>
               <p className="text-xs sm:text-base text-gray-400 mb-6 sm:mb-8 lead cta-lead break-keep">아이디어 한 줄이면 충분합니다. 요약·강점·점수까지는 무료로 바로 확인하세요.</p>
               <button
@@ -785,15 +785,15 @@ export default function Home() {
                   본 서비스는 일반적인 정보와 실행 가이드를 제공하며, 법률·세무·노무 자문이 아닙니다. 법인 설립 절차·비용·세금, 정부지원사업의 요건·금액·일정은 시점에 따라 달라질 수 있어, 진행 전 공식 공고와 전문가(법무사·세무사 등) 확인이 필요합니다.
                 </p>
               </div>
-              <div className="flex flex-wrap gap-x-3 gap-y-1 pt-2 border-t border-white/5 text-[10px] sm:text-[11px] text-white/40 foot-biz font-mono">
-                <span className="foot-biz-item"><b className="font-sans">대표: </b>임태호</span>
-                <span className="foot-biz-item"><b className="font-sans">사업자등록번호: </b>[000-00-00000]</span>
-                <span className="foot-biz-item"><b className="font-sans">통신판매업: </b>0000-서울00구-0000</span>
-                <span className="foot-biz-item"><b className="font-sans">주소: </b>서울특별시 00구 00로 00</span>
-                <span className="foot-biz-item"><b className="font-sans">문의: </b>example@bessential.ai.kr</span>
+              <div className="flex flex-wrap gap-x-3 gap-y-1 pt-2 border-t border-white/5 text-[10px] sm:text-[11px] text-white/40 foot-biz font-sans">
+                <span className="foot-biz-item"><b>대표: </b>임태호</span>
+                <span className="foot-biz-item"><b>사업자등록번호: </b>[000-00-00000]</span>
+                <span className="foot-biz-item"><b>통신판매업: </b>0000-서울00구-0000</span>
+                <span className="foot-biz-item"><b>주소: </b>서울특별시 00구 00로 00</span>
+                <span className="foot-biz-item"><b>문의: </b>example@bessential.ai.kr</span>
               </div>
               <div className="flex flex-col sm:flex-row justify-between items-center pt-2 border-t border-white/5 text-[10px] sm:text-[11px] gap-2 foot-bottom">
-                <span className="font-mono">© 2026 B Essential. All rights reserved.</span>
+                <span className="font-sans">© 2026 B Essential. All rights reserved.</span>
                 <div className="flex gap-4 foot-links text-white/40">
                   <a href="#" className="hover:text-white transition-colors">이용약관</a>
                   <a href="#" className="hover:text-white transition-colors">개인정보처리방침</a>
@@ -806,7 +806,7 @@ export default function Home() {
 
       </div>
 
-      {/* ── 오버레이 상세 리포트 팝업 모달 (모달 내부 폰트 Pretendard 변경) ── */}
+      {/* ── 오버레이 상세 리포트 팝업 모달 ── */}
       <div 
         className={`fixed inset-0 z-[100] flex items-center justify-center p-0 sm:p-4 bg-neutral-950/60 backdrop-blur-md transition-all duration-300 ${showModal ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
         onClick={() => setShowModal(false)}
@@ -904,8 +904,8 @@ export default function Home() {
           <div className="w-10 h-10 border-4 border-white/10 border-t-indigo-500 rounded-full animate-spin shrink-0" />
           
           <div className="space-y-1 mt-2">
-            <h4 className="text-sm font-bold tracking-tight font-mono text-neutral-200">SANDBOX OS LOADING</h4>
-            <p className="text-xs text-neutral-500 font-mono tracking-wide">샌드박스 커널 및 데이터 맵 구조화 중...</p>
+            <h4 className="text-sm font-bold tracking-tight font-sans text-neutral-200">SANDBOX OS LOADING</h4>
+            <p className="text-xs text-neutral-500 font-sans tracking-wide">샌드박스 커널 및 데이터 맵 구조화 중...</p>
           </div>
         </div>
       </div>
