@@ -161,8 +161,8 @@ const examples = [
     risks: [
       { t: "의료기기·의료행위 경계", sev: "高", d: "‘확인·알림’이 의료 모니터링으로 해석될 위험. → 비의료 건강관리로 포지셔닝하고 기능·카피를 ‘확인·기록·전달’로 한정, 식약처 분류 확인 + 법무 검토." },
       { t: "건강 민감정보 처리", sev: "高", d: "건강정보는 민감정보이고 당사자(MCI)의 동의능력 이슈가 있음. → 보호자·대리 동의 구조 명시, 최소수집·암호화·보관기간·파기 정책 문서화." },
-      { t: "음성 합성 윤리·악용", sev: "중~High", d: "음성권·딥보이스 보이스피싱 악용·당사자 인지 윤리. → 본인 인증 기반 등록·합성 동의, AI 안내 고지, 무단합성 방지·로깅." },
-      { t: "AI 환각·오탐/미탐", sev: "High", d: "모호한 발화를 잘못 해석해 이상을 놓치거나 거짓 경보 → 돌봄 사고 위험. → 응급 자동판단 배제, 사람(보호자) 확인 루프 강제, 119/보호자 연계." }
+      { t: "음성 합성 윤리·악용", sev: "중~高", d: "음성권·딥보이스 보이스피싱 악용·당사자 인지 윤리. → 본인 인증 기반 등록·합성 동의, AI 안내 고지, 무단합성 방지·로깅." },
+      { t: "AI 환각·오탐/미탐", sev: "高", d: "모호한 발화를 잘못 해석해 이상을 놓치거나 거짓 경보 → 돌봄 사고 위험. → 응급 자동판단 배제, 사람(보호자) 확인 루프 강제, 119/보호자 연계." }
     ],
     assumptions: [
       { a: "보호자가 월 구독료를 낼 만큼 통증이 크다", how: "보호자 10~15명 문제 인터뷰 + 가격 민감도 + 현재 대체 지출 확인", pass: "5명 이상 ‘유료라도 쓰겠다’ + 대체 지출(요양·돌봄·통신) 존재" },
@@ -199,8 +199,8 @@ const examples = [
     verdict: "양면시장 특성상 공급(가게)과 수요(손님)를 동시에 확보하는 ‘콜드스타트’가 최대 관문입니다. 한 지역의 밀도를 먼저 채우는 지역 한정 전략과, 음식물 쓰레기 감축이라는 사회적 명분(소셜벤처 트랙)이 이를 푸는 두 레버입니다.",
     axes: [{ label: "문제 정의·수요", score: 78, note: "점주 폐기 손실·소비자 가성비 모두 명확. 해외에서 검증된 모델." }, { label: "솔루션 차별성", score: 60, note: "모델 자체는 국내외 선례 존재. 지역 밀도·픽업 UX·브랜드가 실제 승부처." }, { label: "기술 실현성", score: 80, note: "위치·예약·결제 조합으로 난도 낮음 — 동시에 진입장벽도 낮다는 뜻." }, { label: "규제·인허가", score: 66, note: "통신판매·전자상거래 표시, 식품 표시·위생 책임. 의료보다 가볍지만 식품안전이 핵심." }, { label: "수익모델·단위경제", score: 64, note: "건당 수수료가 작아 거래량·밀도·재구매 없이는 단위경제가 안 나옴." }, { label: "팀·실행력", score: 70, note: "공급·수요를 동시에 모으는 지역 영업력이 관건." }],
     strengths: [{ t: "버려지던 가치의 전환", d: "폐기 시 0원인 재고를 매출로 바꿔주므로 점주에게 ‘손해 볼 것 없는’ 제안이 됩니다. 공급 측 도입 장벽이 낮아 초기 가게 확보가 상대적으로 쉽습니다." }, { t: "강한 사회적 명분", d: "음식물 쓰레기·탄소 감축은 ESG·지자체·소셜벤처 트랙과 직접 연결되는 스토리이자 지원 자산입니다. 단순 커머스보다 우호적 채널이 많습니다." }, { t: "낮은 기술 난도·빠른 MVP", d: "위치·예약·결제 조합이라 빠르게 만들고 검증할 수 있고, 초기 자금이 적게 든다는 강점이 있습니다. 가설 검증 속도가 빠릅니다." }, { t: "양면 네트워크 효과", d: "한 지역에서 공급·수요 밀도가 임계점을 넘으면 후발주자가 따라오기 어려운 해자가 형성됩니다." }],
-    risks: [{ t: "양면 콜드스타트", sev: "高", d: "가게도 손님도 ‘상대가 없으면’ 안 들어옴. → 한 동네에 밀도 집중, 공급(가게)을 먼저 수기로 확보한 뒤 수요를 모객하는 순서 설계." }, { t: "식품 안전·표시 책임", sev: "중~High", d: "마감 식품의 소비기한·알레르기·위생 분쟁 시 플랫폼 책임론. → 소비기한·보관·알레르기 표시 의무화, 점주 약관·면책 조항 정비." }],
-    assumptions: [{ a: "점주가 마감 재고을 앱에 올릴 의향이 있다", how: "동네 가게 10~15곳 인터뷰 + 시범 등록", pass: "5곳 이상 실제 등록·반복 등록 의향" }, { a: "손님이 ‘서프라이즈 백’을 반복 구매한다", how: "한 동네 2주 파일럿, 픽업 완료율·재구매율 측정", pass: "픽업 완료 80%+ / 2주 지속률 50%+" }],
+    risks: [{ t: "양면 콜드스타트", sev: "高", d: "가게도 손님도 ‘상대가 없으면’ 안 들어옴. → 한 동네에 밀도 집중, 공급(가게)을 먼저 수기로 확보한 뒤 수요를 모객하는 순서 설계." }, { t: "식품 안전·표시 책임", sev: "중~高", d: "마감 식품의 소비기한·알레르기·위생 분쟁 시 플랫폼 책임론. → 소비기한·보관·알레르기 표시 의무화, 점주 약관·면책 조항 정비." }],
+    assumptions: [{ a: "점주가 마감 재고를 앱에 올릴 의향이 있다", how: "동네 가게 10~15곳 인터뷰 + 시범 등록", pass: "5곳 이상 실제 등록·반복 등록 의향" }, { a: "손님이 ‘서프라이즈 백’을 반복 구매한다", how: "한 동네 2주 파일럿, 픽업 완료율·재구매율 측정", pass: "픽업 완료 80%+ / 2주 지속률 50%+" }],
     roadmap: [{ code: "P0", title: "아이디어 검증", dur: "2~4주", goal: "양면 수요가 실재하는지 확인", milestone: "가게 10곳+ · 손님 의향 파악 완료", todos: ["점주 10~15곳 인터뷰 + 시범 등록", "손님 가성비·환경 동기 인터뷰", "1개 동네 파일럿 가게 섭외"] }, { code: "P1", title: "사업형태·행정 셋업", dur: "2~4주", goal: "통신판매·표시·결제 정비", milestone: "사업 형태 결정 · 통신판매업 신고", todos: ["개인 vs 법인 결정", "통신판매업 신고 진행", "소비기한·알레르기 표시 시스템 설계"] }],
     compare: [{ k: "대외 신뢰도", a: "낮음", b: "높음", note: "가게 제휴 및 프랜차이즈 영업 시 법인 유리" }, { k: "투자 유치", a: "어려움", b: "가능", note: "임팩트 벤처캐피탈(VC) 및 소셜 트랙 자금 유치" }],
     proc: ["상호 결정 (전자상거래·중개 목적 포함)", "정관 작성 (통신판매·플랫폼 중개 목적 명시)", "법인 설립등기 및 통신판매업 신고"],
@@ -241,7 +241,6 @@ export default function Home() {
   const [tabId, setTabId] = useState("diag");
   const [openFaqIdx, setOpenFaqIdx] = useState<number | null>(null);
   const [showModal, setShowModal] = useState(false);
-  
   const [isCompiling, setIsCompiling] = useState(false);
 
   const blocking = useRef(false);
@@ -265,6 +264,24 @@ export default function Home() {
   useEffect(() => {
     const onWheel = (e: WheelEvent) => {
       if (showModal || isCompiling) return;
+      
+      // 결과 예시 섹션(5번) 내 패널 영역 마우스 호버 여부 확인
+      const activeEl = document.activeElement;
+      const hoveredPanel = document.querySelector('.sample-panel:hover');
+      
+      // 흰색 패널 내부 스크롤이 진행 중일 때는 섹션 스위칭(풀페이지 전환)을 일시 정지시킴
+      if (current === 5 && hoveredPanel) {
+        const scrollTop = hoveredPanel.scrollTop;
+        const scrollHeight = hoveredPanel.scrollHeight;
+        const clientHeight = hoveredPanel.clientHeight;
+        
+        // 내릴 때 하단 끝에 도달하지 않았거나, 올릴 때 상단 끝에 도달하지 않은 경우 컨테이너 자체 스크롤 수용
+        if ((e.deltaY > 0 && scrollTop + clientHeight < scrollHeight - 2) || 
+            (e.deltaY < 0 && scrollTop > 2)) {
+          return; // 풀페이지 전환 이벤트 skip
+        }
+      }
+
       e.preventDefault();
       if (blocking.current) return;
       setCurrent((c) => {
@@ -274,6 +291,7 @@ export default function Home() {
         return next;
       });
     };
+    
     const onKeyDown = (e: KeyboardEvent) => {
       if (showModal || isCompiling) {
         if (e.key === "Escape") setShowModal(false);
@@ -294,6 +312,19 @@ export default function Home() {
       if (blocking.current) return;
       const delta = touchStartY.current - e.changedTouches[0].clientY;
       if (Math.abs(delta) < 30) return;
+      
+      // 모바일 모드 모니터링 대응 용도 터치 우회 제어
+      const hoveredPanel = document.querySelector('.sample-panel');
+      if (current === 5 && hoveredPanel) {
+        const scrollTop = hoveredPanel.scrollTop;
+        const scrollHeight = hoveredPanel.scrollHeight;
+        const clientHeight = hoveredPanel.clientHeight;
+        if ((delta > 0 && scrollTop + clientHeight < scrollHeight - 5) || 
+            (delta < 0 && scrollTop > 5)) {
+          return;
+        }
+      }
+
       setCurrent((c) => {
         const next = delta > 0 ? Math.min(c + 1, SECTION_COUNT - 1) : Math.max(c - 1, 0);
         blocking.current = true;
@@ -311,7 +342,7 @@ export default function Home() {
       window.removeEventListener("touchstart", onTouchStart);
       window.removeEventListener("touchend", onTouchEnd);
     };
-  }, [showModal, isCompiling]);
+  }, [showModal, isCompiling, current]);
 
   return (
     <div
@@ -494,7 +525,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── 섹션 3 · 이용 방법 (요청하신 보라색 숫자 부분 JetBrains Mono 적용) ── */}
+        {/* ── 섹션 3 · 이용 방법 ── */}
         <section className="h-screen flex flex-col items-center justify-center px-4 sm:px-6 bes-section">
           <div className="max-w-5xl w-full mx-auto">
             <div className="text-center mb-8 sm:mb-12 sec-head">
@@ -506,7 +537,6 @@ export default function Home() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-10 steps">
               {steps.map((s, i) => (
                 <div key={i} className="relative step flex sm:block items-start gap-4">
-                  {/* 요청사항에 맞춰 큰 보라색 숫자 부분만 font-mono 명시 */}
                   <span className="text-3xl sm:text-4xl font-black text-indigo-500 font-mono step-n leading-none shrink-0">{s.num}</span>
                   <div className="relative z-10">
                     <h3 className="font-semibold text-neutral-900 text-sm sm:text-lg sm:mt-1 mb-1 sm:mb-2 step-title">{s.title}</h3>
@@ -549,12 +579,13 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── 섹션 5 · 실제 결과 미리보기 ── */}
-        <section className="h-screen flex flex-col items-center justify-center px-4 sm:px-6 bes-section">
-          <div className="max-w-5xl w-full mx-auto overflow-y-auto max-h-[85vh] pr-1">
-            <div className="text-center mb-4 sm:mb-6 sec-head">
+        {/* ── 섹션 5 · 실제 결과 미리보기 (구조 수정 완료) ── */}
+        <section className="h-screen flex flex-col items-center justify-center px-4 sm:px-6 relative" id="sample-section">
+          {/* 타이틀 컨테이너 레이아웃 - 상단에 무조건 고정 */}
+          <div className="w-full max-w-5xl mx-auto shrink-0 pt-4">
+            <div className="text-center mb-3 sec-head">
               <span className="text-xs font-semibold tracking-widest text-indigo-600 uppercase eyebrow font-sans">SAMPLE OUTPUT</span>
-              <h2 className="text-2xl sm:text-4xl font-bold text-gray-900 mt-1 sm:mt-3 h2">결제하면, 이만큼 나옵니다</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mt-1 h2">결제하면, 이만큼 나옵니다</h2>
             </div>
             
             <div className="flex gap-2 items-center mb-3 overflow-x-auto pb-1 whitespace-nowrap scrollbar-hide ex-chips">
@@ -569,77 +600,79 @@ export default function Home() {
               <p className="text-gray-700 leading-normal">{E.input}</p>
             </div>
 
-            <div className="flex gap-1 mb-3 overflow-x-auto pb-1 whitespace-nowrap scrollbar-hide sample-tabs border-b border-gray-100">
+            <div className="flex gap-1 mb-2 overflow-x-auto pb-1 whitespace-nowrap scrollbar-hide sample-tabs border-b border-gray-100">
               {sampleTabs.map((t) => (
                 <button key={t.id} onClick={() => setTabId(t.id)} className={`sample-tab px-4 py-2 text-xs font-medium border-b-2 transition-all ${tabId === t.id ? "on border-indigo-600 text-indigo-600 font-bold" : "border-transparent text-gray-400"}`}>
                   <span className="sample-tab-code mr-1 font-sans text-[10px] opacity-60">{t.code}</span>{t.label}
                 </button>
               ))}
             </div>
+          </div>
 
-            <div className="bg-white border border-gray-100 rounded-2xl p-4 sm:p-6 shadow-sm sample-panel text-xs sm:text-sm mb-3">
-              {tabId === "diag" && (
-                <div>
-                  <div className="font-bold mb-2.5 blk-h flex items-center gap-1.5">종합 매핑 요약 <span className="free-badge text-green-600 bg-green-50 px-1.5 py-0.2 rounded text-[10px]">무료 공개</span></div>
-                  <div className="border border-gray-100 rounded-xl overflow-hidden sum-card divide-y divide-gray-50">
-                    {E.summary.map((s, i) => (
-                      <div key={i} className="grid grid-cols-1 sm:grid-cols-4 p-3 gap-1 sm:gap-3 sum-row"><span className="font-semibold text-indigo-600 sum-k text-xs font-sans">{s.k}</span><span className="sm:col-span-3 text-gray-600 text-xs break-all">{s.v}</span></div>
-                    ))}
-                  </div>
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mt-5 items-center sp-diag-top">
-                    <div className="text-center bg-gray-50/60 rounded-xl p-3 score-box">
-                      <div className="text-3xl sm:text-4xl font-extrabold text-indigo-600 score-big font-sans">{E.score}<span className="text-xs text-gray-400 score-out">/100</span></div>
-                      <div className="text-[10px] text-gray-400 mt-1 score-sub">비즈니스 진단 지수</div>
-                    </div>
-                    <div className="sm:col-span-2 space-y-1.5 axis">
-                      {E.axes.map((a, i) => (
-                        <div key={i} className="grid grid-cols-4 items-center gap-1 text-[11px] sm:text-xs axis-item">
-                          <span className="text-gray-600 axis-label truncate col-span-1 font-sans">{a.label}</span>
-                          <div className="col-span-2 h-2 bg-gray-100 rounded-full overflow-hidden axis-bar"><div className="h-full bg-indigo-500 axis-fill" style={{ width: `${a.score}%` }} /></div>
-                          <span className="text-right font-sans text-gray-900 axis-num col-span-1">{a.score}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              )}
-              {tabId === "road" && (
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 rm-rail">
-                  {E.roadmap.map((r, i) => (
-                    <div key={i} className="border border-gray-100 p-4 rounded-xl bg-gray-50/50 rm-step">
-                      <div className="flex justify-between items-center mb-1.5 rm-head"><span className="bg-indigo-50 text-indigo-600 text-[10px] font-sans px-1.5 py-0.2 rounded rm-code">{r.code}</span><span className="text-[10px] text-gray-400 rm-dur font-sans">{r.dur}</span></div>
-                      <div className="font-bold text-gray-900 text-xs sm:text-sm rm-title">{r.title}</div>
-                      <p className="text-[11px] text-gray-500 mt-1 rm-goal break-keep">{r.goal}</p>
-                    </div>
+          {/* 핵심 변경 구간: 이 흰색 패널 주위와 내부만 개별 독립 스크롤을 탑재시킴 */}
+          <div className="w-full max-w-5xl mx-auto flex-1 overflow-y-auto max-h-[48vh] sm:max-h-[50vh] bg-white border border-gray-100 rounded-2xl p-4 sm:p-6 shadow-sm sample-panel text-xs sm:text-sm scrollbar-thin">
+            {tabId === "diag" && (
+              <div className="space-y-4">
+                <div className="font-bold mb-1.5 blk-h flex items-center gap-1.5">종합 매핑 요약 <span className="free-badge text-green-600 bg-green-50 px-1.5 py-0.2 rounded text-[10px]">무료 공개</span></div>
+                <div className="border border-gray-100 rounded-xl overflow-hidden sum-card divide-y divide-gray-50">
+                  {E.summary.map((s, i) => (
+                    <div key={i} className="grid grid-cols-1 sm:grid-cols-4 p-3 gap-1 sm:gap-3 sum-row"><span className="font-semibold text-indigo-600 sum-k text-xs font-sans">{s.k}</span><span className="sm:col-span-3 text-gray-600 text-xs break-all">{s.v}</span></div>
                   ))}
                 </div>
-              )}
-              {tabId === "admin" && (
-                <div>
-                  <div className="border border-gray-100 rounded-xl overflow-hidden cmp divide-y divide-gray-100">
-                    {E.compare.map((c, i) => (
-                      <div key={i} className="grid grid-cols-3 p-3 text-[11px] sm:text-xs cmp-row"><span className="font-bold text-gray-700 cmp-k truncate font-sans">{c.k}</span><span className="text-gray-500 truncate">개인: {c.a}</span><span className="text-indigo-600 font-semibold cmp-b truncate font-sans">{c.b}</span></div>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mt-4 items-center sp-diag-top">
+                  <div className="text-center bg-gray-50/60 rounded-xl p-3 score-box">
+                    <div className="text-3xl sm:text-4xl font-extrabold text-indigo-600 score-big font-sans">{E.score}<span className="text-xs text-gray-400 score-out">/100</span></div>
+                    <div className="text-[10px] text-gray-400 mt-1 score-sub">비즈니스 진단 지수</div>
+                  </div>
+                  <div className="sm:col-span-2 space-y-1.5 axis">
+                    {E.axes.map((a, i) => (
+                      <div key={i} className="grid grid-cols-4 items-center gap-1 text-[11px] sm:text-xs axis-item">
+                        <span className="text-gray-600 axis-label truncate col-span-1 font-sans">{a.label}</span>
+                        <div className="col-span-2 h-2 bg-gray-100 rounded-full overflow-hidden axis-bar"><div className="h-full bg-indigo-500 axis-fill" style={{ width: `${a.score}%` }} /></div>
+                        <span className="text-right font-sans text-gray-900 axis-num col-span-1">{a.score}</span>
+                      </div>
                     ))}
                   </div>
                 </div>
-              )}
-              {tabId === "docs" && (
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 doc-grid">
-                  {E.artifacts.slice(0, 6).map((a, i) => (
-                    <div key={i} className="border border-gray-100 p-3 rounded-xl doc-card"><FileText className="text-indigo-500 w-4 h-4 mb-1 doc-ico" /><div className="font-bold text-xs text-gray-900 doc-t truncate">{a.t}</div><p className="text-[11px] text-gray-500 mt-0.5 doc-d leading-tight break-keep">{a.d}</p></div>
-                  ))}
+              </div>
+            )}
+            {tabId === "road" && (
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 rm-rail">
+                {E.roadmap.map((r, i) => (
+                  <div key={i} className="border border-gray-100 p-4 rounded-xl bg-gray-50/50 rm-step">
+                    <div className="flex justify-between items-center mb-1.5 rm-head"><span className="bg-indigo-50 text-indigo-600 text-[10px] font-sans px-1.5 py-0.2 rounded rm-code">{r.code}</span><span className="text-[10px] text-gray-400 rm-dur font-sans">{r.dur}</span></div>
+                    <div className="font-bold text-gray-900 text-xs sm:text-sm rm-title">{r.title}</div>
+                    <p className="text-[11px] text-gray-500 mt-1 rm-goal break-keep">{r.goal}</p>
+                  </div>
+                ))}
+              </div>
+            )}
+            {tabId === "admin" && (
+              <div>
+                <div className="border border-gray-100 rounded-xl overflow-hidden cmp divide-y divide-gray-100">
+                  {E.compare.map((c, i) => (
+                    <div key={i} className="grid grid-cols-3 p-3 text-[11px] sm:text-xs cmp-row"><span className="font-bold text-gray-700 cmp-k truncate font-sans">{c.k}</span><span className="text-gray-500 truncate">개인: {c.a}</span><span className="text-indigo-600 font-semibold cmp-b truncate font-sans">{c.b}</span></div>
+                    ))}
                 </div>
-              )}
-            </div>
+              </div>
+            )}
+            {tabId === "docs" && (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 doc-grid">
+                {E.artifacts.slice(0, 6).map((a, i) => (
+                  <div key={i} className="border border-gray-100 p-3 rounded-xl doc-card"><FileText className="text-indigo-500 w-4 h-4 mb-1 doc-ico" /><div className="font-bold text-xs text-gray-900 doc-t truncate">{a.t}</div><p className="text-[11px] text-gray-500 mt-0.5 doc-d leading-tight break-keep">{a.d}</p></div>
+                ))}
+              </div>
+            )}
+          </div>
 
-            <div className="flex justify-center mt-3">
-              <button
-                onClick={() => setShowModal(true)}
-                className="w-full sm:w-auto px-5 py-3 rounded-full bg-neutral-900 text-white font-medium text-xs hover:bg-neutral-800 transition-colors inline-flex items-center gap-1.5 shadow-sm whitespace-nowrap justify-center focus:outline-none"
-              >
-                <ListChecks size={15} /> 상세 리포트 보기 →
-              </button>
-            </div>
+          {/* 하단 고정 액션 버튼 레이어 */}
+          <div className="w-full max-w-5xl mx-auto flex justify-center mt-3 shrink-0 pb-4">
+            <button
+              onClick={() => setShowModal(true)}
+              className="w-full sm:w-auto px-5 py-2.5 rounded-full bg-neutral-900 text-white font-medium text-xs hover:bg-neutral-800 transition-colors inline-flex items-center gap-1.5 shadow-sm whitespace-nowrap justify-center focus:outline-none"
+            >
+              <ListChecks size={15} /> 상세 리포트 보기 →
+            </button>
           </div>
         </section>
 
@@ -786,7 +819,7 @@ export default function Home() {
                   본 서비스는 일반적인 정보와 실행 가이드를 제공하며, 법률·세무·노무 자문이 아닙니다. 법인 설립 절차·비용·세금, 정부지원사업의 요건·금액·일정은 시점에 따라 달라질 수 있어, 진행 전 공식 공고와 전문가(법무사·세무사 등) 확인이 필요합니다.
                 </p>
               </div>
-              <div className="flex flex-wrap gap-x-3 gap-y-1 pt-2 border-t border-white/5 text-[10px] sm:text-[11px] text-white/40 foot-biz font-sans">
+              <div className="flex flex-wrap gap-x-3 gap-y-1 pt-2 border-t border-white/5 text-[10px] sm:text-[11px] text-white/40 foot-biz">
                 <span className="foot-biz-item"><b>대표: </b>임태호</span>
                 <span className="foot-biz-item"><b>사업자등록번호: </b>[000-00-00000]</span>
                 <span className="foot-biz-item"><b>통신판매업: </b>0000-서울00구-0000</span>
@@ -949,6 +982,21 @@ export default function Home() {
         
         .scrollbar-none::-webkit-scrollbar { display: none; }
         .scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* 데스크탑 웹킷 전용 스크롤바 커스텀 */
+        .scrollbar-thin::-webkit-scrollbar {
+          width: 6px;
+        }
+        .scrollbar-thin::-webkit-scrollbar-track {
+          background: transparent;
+        }
+        .scrollbar-thin::-webkit-scrollbar-thumb {
+          background: rgba(156, 163, 175, 0.4);
+          border-radius: 9999px;
+        }
+        .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+          background: rgba(156, 163, 175, 0.6);
+        }
       `}</style>
     </div>
   );
